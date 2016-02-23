@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		96461AA61C7C999600986E0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA51C7C999600986E0D /* main.m */; };
+		96461AA91C7C999600986E0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA81C7C999600986E0D /* AppDelegate.m */; };
+		96461AAC1C7C999600986E0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AAB1C7C999600986E0D /* ViewController.m */; };
+		96461AAF1C7C999600986E0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96461AAD1C7C999600986E0D /* Main.storyboard */; };
+		96461AB11C7C999600986E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB01C7C999600986E0D /* Assets.xcassets */; };
+		96461AB41C7C999600986E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB21C7C999600986E0D /* LaunchScreen.storyboard */; };
+		96461ABF1C7C999700986E0D /* WuliWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461ABE1C7C999700986E0D /* WuliWeboTests.m */; };
+		96461ACA1C7C999700986E0D /* WuliWeboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AC91C7C999700986E0D /* WuliWeboUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96461ABB1C7C999700986E0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96461A991C7C999600986E0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96461AA01C7C999600986E0D;
+			remoteInfo = WuliWebo;
+		};
+		96461AC61C7C999700986E0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96461A991C7C999600986E0D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 96461AA01C7C999600986E0D;
+			remoteInfo = WuliWebo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		96461AA11C7C999600986E0D /* WuliWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WuliWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		96461AA51C7C999600986E0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96461AA71C7C999600986E0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		96461AA81C7C999600986E0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		96461AAA1C7C999600986E0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		96461AAB1C7C999600986E0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		96461AAE1C7C999600986E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		96461AB01C7C999600986E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		96461AB31C7C999600986E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96461AB51C7C999600986E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96461ABA1C7C999700986E0D /* WuliWeboTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WuliWeboTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96461ABE1C7C999700986E0D /* WuliWeboTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WuliWeboTests.m; sourceTree = "<group>"; };
+		96461AC01C7C999700986E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96461AC51C7C999700986E0D /* WuliWeboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WuliWeboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		96461AC91C7C999700986E0D /* WuliWeboUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WuliWeboUITests.m; sourceTree = "<group>"; };
+		96461ACB1C7C999700986E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		96461A9E1C7C999600986E0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96461AB71C7C999700986E0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96461AC21C7C999700986E0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		96461A981C7C999600986E0D = {
+			isa = PBXGroup;
+			children = (
+				96461AA31C7C999600986E0D /* WuliWebo */,
+				96461ABD1C7C999700986E0D /* WuliWeboTests */,
+				96461AC81C7C999700986E0D /* WuliWeboUITests */,
+				96461AA21C7C999600986E0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		96461AA21C7C999600986E0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96461AA11C7C999600986E0D /* WuliWebo.app */,
+				96461ABA1C7C999700986E0D /* WuliWeboTests.xctest */,
+				96461AC51C7C999700986E0D /* WuliWeboUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		96461AA31C7C999600986E0D /* WuliWebo */ = {
+			isa = PBXGroup;
+			children = (
+				96461AA71C7C999600986E0D /* AppDelegate.h */,
+				96461AA81C7C999600986E0D /* AppDelegate.m */,
+				96461AAA1C7C999600986E0D /* ViewController.h */,
+				96461AAB1C7C999600986E0D /* ViewController.m */,
+				96461AAD1C7C999600986E0D /* Main.storyboard */,
+				96461AB01C7C999600986E0D /* Assets.xcassets */,
+				96461AB21C7C999600986E0D /* LaunchScreen.storyboard */,
+				96461AB51C7C999600986E0D /* Info.plist */,
+				96461AA41C7C999600986E0D /* Supporting Files */,
+			);
+			path = WuliWebo;
+			sourceTree = "<group>";
+		};
+		96461AA41C7C999600986E0D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				96461AA51C7C999600986E0D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		96461ABD1C7C999700986E0D /* WuliWeboTests */ = {
+			isa = PBXGroup;
+			children = (
+				96461ABE1C7C999700986E0D /* WuliWeboTests.m */,
+				96461AC01C7C999700986E0D /* Info.plist */,
+			);
+			path = WuliWeboTests;
+			sourceTree = "<group>";
+		};
+		96461AC81C7C999700986E0D /* WuliWeboUITests */ = {
+			isa = PBXGroup;
+			children = (
+				96461AC91C7C999700986E0D /* WuliWeboUITests.m */,
+				96461ACB1C7C999700986E0D /* Info.plist */,
+			);
+			path = WuliWeboUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		96461AA01C7C999600986E0D /* WuliWebo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96461ACE1C7C999700986E0D /* Build configuration list for PBXNativeTarget "WuliWebo" */;
+			buildPhases = (
+				96461A9D1C7C999600986E0D /* Sources */,
+				96461A9E1C7C999600986E0D /* Frameworks */,
+				96461A9F1C7C999600986E0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WuliWebo;
+			productName = WuliWebo;
+			productReference = 96461AA11C7C999600986E0D /* WuliWebo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		96461AB91C7C999700986E0D /* WuliWeboTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96461AD11C7C999700986E0D /* Build configuration list for PBXNativeTarget "WuliWeboTests" */;
+			buildPhases = (
+				96461AB61C7C999700986E0D /* Sources */,
+				96461AB71C7C999700986E0D /* Frameworks */,
+				96461AB81C7C999700986E0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96461ABC1C7C999700986E0D /* PBXTargetDependency */,
+			);
+			name = WuliWeboTests;
+			productName = WuliWeboTests;
+			productReference = 96461ABA1C7C999700986E0D /* WuliWeboTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		96461AC41C7C999700986E0D /* WuliWeboUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 96461AD41C7C999700986E0D /* Build configuration list for PBXNativeTarget "WuliWeboUITests" */;
+			buildPhases = (
+				96461AC11C7C999700986E0D /* Sources */,
+				96461AC21C7C999700986E0D /* Frameworks */,
+				96461AC31C7C999700986E0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				96461AC71C7C999700986E0D /* PBXTargetDependency */,
+			);
+			name = WuliWeboUITests;
+			productName = WuliWeboUITests;
+			productReference = 96461AC51C7C999700986E0D /* WuliWeboUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		96461A991C7C999600986E0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = nantian;
+				TargetAttributes = {
+					96461AA01C7C999600986E0D = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					96461AB91C7C999700986E0D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 96461AA01C7C999600986E0D;
+					};
+					96461AC41C7C999700986E0D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 96461AA01C7C999600986E0D;
+					};
+				};
+			};
+			buildConfigurationList = 96461A9C1C7C999600986E0D /* Build configuration list for PBXProject "WuliWebo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 96461A981C7C999600986E0D;
+			productRefGroup = 96461AA21C7C999600986E0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				96461AA01C7C999600986E0D /* WuliWebo */,
+				96461AB91C7C999700986E0D /* WuliWeboTests */,
+				96461AC41C7C999700986E0D /* WuliWeboUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		96461A9F1C7C999600986E0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96461AB41C7C999600986E0D /* LaunchScreen.storyboard in Resources */,
+				96461AB11C7C999600986E0D /* Assets.xcassets in Resources */,
+				96461AAF1C7C999600986E0D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96461AB81C7C999700986E0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96461AC31C7C999700986E0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		96461A9D1C7C999600986E0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96461AAC1C7C999600986E0D /* ViewController.m in Sources */,
+				96461AA91C7C999600986E0D /* AppDelegate.m in Sources */,
+				96461AA61C7C999600986E0D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96461AB61C7C999700986E0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96461ABF1C7C999700986E0D /* WuliWeboTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		96461AC11C7C999700986E0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96461ACA1C7C999700986E0D /* WuliWeboUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96461ABC1C7C999700986E0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96461AA01C7C999600986E0D /* WuliWebo */;
+			targetProxy = 96461ABB1C7C999700986E0D /* PBXContainerItemProxy */;
+		};
+		96461AC71C7C999700986E0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 96461AA01C7C999600986E0D /* WuliWebo */;
+			targetProxy = 96461AC61C7C999700986E0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96461AAD1C7C999600986E0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96461AAE1C7C999600986E0D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		96461AB21C7C999600986E0D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96461AB31C7C999600986E0D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		96461ACC1C7C999700986E0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		96461ACD1C7C999700986E0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		96461ACF1C7C999700986E0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WuliWebo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWebo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		96461AD01C7C999700986E0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = WuliWebo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWebo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		96461AD21C7C999700986E0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WuliWeboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWeboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WuliWebo.app/WuliWebo";
+			};
+			name = Debug;
+		};
+		96461AD31C7C999700986E0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WuliWeboTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWeboTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WuliWebo.app/WuliWebo";
+			};
+			name = Release;
+		};
+		96461AD51C7C999700986E0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WuliWeboUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWeboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WuliWebo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		96461AD61C7C999700986E0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WuliWeboUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWeboUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = WuliWebo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		96461A9C1C7C999600986E0D /* Build configuration list for PBXProject "WuliWebo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96461ACC1C7C999700986E0D /* Debug */,
+				96461ACD1C7C999700986E0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		96461ACE1C7C999700986E0D /* Build configuration list for PBXNativeTarget "WuliWebo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96461ACF1C7C999700986E0D /* Debug */,
+				96461AD01C7C999700986E0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96461AD11C7C999700986E0D /* Build configuration list for PBXNativeTarget "WuliWeboTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96461AD21C7C999700986E0D /* Debug */,
+				96461AD31C7C999700986E0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		96461AD41C7C999700986E0D /* Build configuration list for PBXNativeTarget "WuliWeboUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				96461AD51C7C999700986E0D /* Debug */,
+				96461AD61C7C999700986E0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 96461A991C7C999600986E0D /* Project object */;
+}
