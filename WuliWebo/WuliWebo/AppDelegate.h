@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  WuliWebo
+//  MobileMoniter
 //
-//  Created by 古秀湖 on 16/2/23.
-//  Copyright © 2016年 nantian. All rights reserved.
+//  Created by yongkun on 15/5/19.
+//  Copyright (c) 2015年 nantian. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

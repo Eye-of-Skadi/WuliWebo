@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  LoginVCtrl.h
 //  WuliWebo
 //
-//  Created by 古秀湖 on 16/2/23.
+//  Created by 古秀湖 on 16/2/26.
 //  Copyright © 2016年 nantian. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface LoginVCtrl : UIViewController
 
 @end
-

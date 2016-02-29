@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9600F91E1C80350C00659A97 /* LoginVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9600F91D1C80350C00659A97 /* LoginVCtrl.m */; };
 		96461AA61C7C999600986E0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA51C7C999600986E0D /* main.m */; };
 		96461AA91C7C999600986E0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA81C7C999600986E0D /* AppDelegate.m */; };
-		96461AAC1C7C999600986E0D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AAB1C7C999600986E0D /* ViewController.m */; };
-		96461AAF1C7C999600986E0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96461AAD1C7C999600986E0D /* Main.storyboard */; };
 		96461AB11C7C999600986E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB01C7C999600986E0D /* Assets.xcassets */; };
 		96461AB41C7C999600986E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB21C7C999600986E0D /* LaunchScreen.storyboard */; };
 		96461ABF1C7C999700986E0D /* WuliWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461ABE1C7C999700986E0D /* WuliWeboTests.m */; };
@@ -43,13 +42,12 @@
 		9600F9121C80209F00659A97 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9600F9141C8020B000659A97 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9600F9161C8020E100659A97 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9600F91C1C80350C00659A97 /* LoginVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVCtrl.h; sourceTree = "<group>"; };
+		9600F91D1C80350C00659A97 /* LoginVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVCtrl.m; sourceTree = "<group>"; };
 		96461AA11C7C999600986E0D /* WuliWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WuliWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96461AA51C7C999600986E0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96461AA71C7C999600986E0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		96461AA81C7C999600986E0D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		96461AAA1C7C999600986E0D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		96461AAB1C7C999600986E0D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		96461AAE1C7C999600986E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		96461AB01C7C999600986E0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96461AB31C7C999600986E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96461AB51C7C999600986E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,6 +101,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9600F91B1C8034FB00659A97 /* M_Login */ = {
+			isa = PBXGroup;
+			children = (
+				9600F91C1C80350C00659A97 /* LoginVCtrl.h */,
+				9600F91D1C80350C00659A97 /* LoginVCtrl.m */,
+			);
+			path = M_Login;
+			sourceTree = "<group>";
+		};
 		96461A981C7C999600986E0D = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +135,9 @@
 		96461AA31C7C999600986E0D /* WuliWebo */ = {
 			isa = PBXGroup;
 			children = (
+				9600F91B1C8034FB00659A97 /* M_Login */,
 				96461AA71C7C999600986E0D /* AppDelegate.h */,
 				96461AA81C7C999600986E0D /* AppDelegate.m */,
-				96461AAA1C7C999600986E0D /* ViewController.h */,
-				96461AAB1C7C999600986E0D /* ViewController.m */,
-				96461AAD1C7C999600986E0D /* Main.storyboard */,
 				96461AB01C7C999600986E0D /* Assets.xcassets */,
 				96461AB21C7C999600986E0D /* LaunchScreen.storyboard */,
 				96461AB51C7C999600986E0D /* Info.plist */,
@@ -283,7 +288,6 @@
 			files = (
 				96461AB41C7C999600986E0D /* LaunchScreen.storyboard in Resources */,
 				96461AB11C7C999600986E0D /* Assets.xcassets in Resources */,
-				96461AAF1C7C999600986E0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96461AAC1C7C999600986E0D /* ViewController.m in Sources */,
+				9600F91E1C80350C00659A97 /* LoginVCtrl.m in Sources */,
 				96461AA91C7C999600986E0D /* AppDelegate.m in Sources */,
 				96461AA61C7C999600986E0D /* main.m in Sources */,
 			);
@@ -379,14 +383,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		96461AAD1C7C999600986E0D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				96461AAE1C7C999600986E0D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		96461AB21C7C999600986E0D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
