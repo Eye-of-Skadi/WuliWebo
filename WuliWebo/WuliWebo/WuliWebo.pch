@@ -1,0 +1,28 @@
+//
+//  WuliWebo.pch
+//  WuliWebo
+//
+//  Created by 古秀湖 on 16/2/29.
+//  Copyright © 2016年 nantian. All rights reserved.
+//
+
+#ifndef WuliWebo_pch
+#define WuliWebo_pch
+
+//布局autolayout框架
+#import <Masonry.h>
+
+//函数响应式编程（FRP）框架
+#import <ReactiveCocoa.h>
+
+//微博sdk
+#import <WeiboSDK.h>
+
+#pragma mark - Colors
+#define WHITE_COLOR [UIColor whiteColor]//白色
+
+
+#define kAppKey         @"2045436852"
+#define kRedirectURI    @"http://www.sina.com"
+
+#endif /* WuliWebo_pch */

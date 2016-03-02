@@ -8,10 +8,25 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@protocol LoginDelegate <NSObject>
+
+-(void)loginSuccess;
+-(void)loginFailed;
+
+@end
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate,WeiboSDKDelegate>
+{
+    NSString *wbtoken;
+    NSString *userID;
+    id<LoginDelegate> loginDelegate;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, retain) NSString* wbtoken;
+@property (strong, retain) NSString* userID;
 
+@property (strong, nonatomic) id<LoginDelegate> loginDelegate;
 
 @end
 

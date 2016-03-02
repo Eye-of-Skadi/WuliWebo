@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9600F91E1C80350C00659A97 /* LoginVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9600F91D1C80350C00659A97 /* LoginVCtrl.m */; };
 		96461AA61C7C999600986E0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA51C7C999600986E0D /* main.m */; };
 		96461AA91C7C999600986E0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA81C7C999600986E0D /* AppDelegate.m */; };
 		96461AB11C7C999600986E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB01C7C999600986E0D /* Assets.xcassets */; };
 		96461AB41C7C999600986E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB21C7C999600986E0D /* LaunchScreen.storyboard */; };
 		96461ABF1C7C999700986E0D /* WuliWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461ABE1C7C999700986E0D /* WuliWeboTests.m */; };
 		96461ACA1C7C999700986E0D /* WuliWeboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AC91C7C999700986E0D /* WuliWeboUITests.m */; };
+		96958FBE1C842CD20086C548 /* LoginVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FBB1C842CD20086C548 /* LoginVCtrl.m */; };
+		96958FC21C843ADD0086C548 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC11C843ADD0086C548 /* LoginModel.m */; };
+		96958FC51C843AF60086C548 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC41C843AF60086C548 /* LoginView.m */; };
 		EED482D2E6DBFAE763F9A50E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C84B8EC5C81EE4035E5B96 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +44,6 @@
 		9600F9121C80209F00659A97 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9600F9141C8020B000659A97 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9600F9161C8020E100659A97 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		9600F91C1C80350C00659A97 /* LoginVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVCtrl.h; sourceTree = "<group>"; };
-		9600F91D1C80350C00659A97 /* LoginVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVCtrl.m; sourceTree = "<group>"; };
 		96461AA11C7C999600986E0D /* WuliWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WuliWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96461AA51C7C999600986E0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96461AA71C7C999600986E0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -57,6 +57,13 @@
 		96461AC51C7C999700986E0D /* WuliWeboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WuliWeboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96461AC91C7C999700986E0D /* WuliWeboUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WuliWeboUITests.m; sourceTree = "<group>"; };
 		96461ACB1C7C999700986E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96958FB61C8417580086C548 /* WuliWebo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WuliWebo.pch; sourceTree = "<group>"; };
+		96958FBA1C842CD20086C548 /* LoginVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVCtrl.h; sourceTree = "<group>"; };
+		96958FBB1C842CD20086C548 /* LoginVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVCtrl.m; sourceTree = "<group>"; };
+		96958FC01C843ADD0086C548 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		96958FC11C843ADD0086C548 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		96958FC31C843AF60086C548 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
+		96958FC41C843AF60086C548 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
 		C0C84B8EC5C81EE4035E5B96 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE048B19D2E2FCC3B147AA46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +111,9 @@
 		9600F91B1C8034FB00659A97 /* M_Login */ = {
 			isa = PBXGroup;
 			children = (
-				9600F91C1C80350C00659A97 /* LoginVCtrl.h */,
-				9600F91D1C80350C00659A97 /* LoginVCtrl.m */,
+				96958FB91C842CD20086C548 /* Control */,
+				96958FBC1C842CD20086C548 /* Model */,
+				96958FBD1C842CD20086C548 /* View */,
 			);
 			path = M_Login;
 			sourceTree = "<group>";
@@ -150,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				96461AA51C7C999600986E0D /* main.m */,
+				96958FB61C8417580086C548 /* WuliWebo.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -170,6 +179,33 @@
 				96461ACB1C7C999700986E0D /* Info.plist */,
 			);
 			path = WuliWeboUITests;
+			sourceTree = "<group>";
+		};
+		96958FB91C842CD20086C548 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				96958FBA1C842CD20086C548 /* LoginVCtrl.h */,
+				96958FBB1C842CD20086C548 /* LoginVCtrl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		96958FBC1C842CD20086C548 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96958FC01C843ADD0086C548 /* LoginModel.h */,
+				96958FC11C843ADD0086C548 /* LoginModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96958FBD1C842CD20086C548 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				96958FC31C843AF60086C548 /* LoginView.h */,
+				96958FC41C843AF60086C548 /* LoginView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DD1F4828F8ECA89B329CCDF3 /* Pods */ = {
@@ -345,8 +381,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9600F91E1C80350C00659A97 /* LoginVCtrl.m in Sources */,
+				96958FBE1C842CD20086C548 /* LoginVCtrl.m in Sources */,
+				96958FC21C843ADD0086C548 /* LoginModel.m in Sources */,
 				96461AA91C7C999600986E0D /* AppDelegate.m in Sources */,
+				96958FC51C843AF60086C548 /* LoginView.m in Sources */,
 				96461AA61C7C999600986E0D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,10 +518,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WuliWebo/WuliWebo.pch";
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = WuliWebo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sina.weibo.SNWeiboSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -494,10 +535,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WuliWebo/WuliWebo.pch";
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = WuliWebo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.nantian.WuliWebo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sina.weibo.SNWeiboSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

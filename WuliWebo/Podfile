@@ -1,4 +1,14 @@
 platform :ios, '7.0'
 
 pod 'ReactiveCocoa'
-pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git" 
+pod "WeiboSDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+pod 'CocoaLumberjack'
+pod 'pop'
+pod 'IQKeyboardManager'
+pod "UIAlertView-Blocks", "~> 1.0"
+pod 'DTCoreText'
+pod 'SECoreTextView'
+pod 'JTSImageViewController'
+pod 'RKNotificationHub'
+pod 'Masonry'
+pod 'AFNetworking'
