@@ -7,6 +7,7 @@
 //
 
 #import "LoginView.h"
+#import "HomeVCtrl].h"
 
 @implementation LoginView
 
@@ -35,4 +36,29 @@
 
     return bgImageView;
 }
+
+/**
+ *  获取主页
+ *
+ *  @return 主页
+ */
++(UIViewController*)getMainViewController{
+    
+    //主页
+    HomeVCtrl_ *homevc = [[HomeVCtrl_ alloc]init];
+    UINavigationController *homeNav = [[UINavigationController alloc]initWithRootViewController:homevc];
+    
+    UITabBarController *phone_tab_vc = [[UITabBarController alloc]init];
+    [phone_tab_vc setViewControllers:[NSArray arrayWithObjects:homeNav , nil]];
+    
+    //主页
+    UITabBarItem *homeItem = [[[phone_tab_vc tabBar] items]objectAtIndex:0];
+    [homeItem setImage:[UIImage imageNamed:@"tab_home"]];
+    [homeItem setSelectedImage:[UIImage imageNamed:@"tab_home_selected"]];
+    [homeItem setTitle:@"主页"];
+    
+    return phone_tab_vc;
+
+}
+
 @end

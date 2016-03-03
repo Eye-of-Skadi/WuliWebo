@@ -18,6 +18,15 @@
 //微博sdk
 #import <WeiboSDK.h>
 
+//公共方法
+#import "PublicMethods.h"
+
+
+
+
+
+
+
 #pragma mark - Colors
 #define WHITE_COLOR [UIColor whiteColor]//白色
 

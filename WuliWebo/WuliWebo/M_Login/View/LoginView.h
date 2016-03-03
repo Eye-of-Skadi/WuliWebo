@@ -24,4 +24,11 @@
  */
 +(UIImageView*)createBGImageView;
 
+/**
+ *  获取主页
+ *
+ *  @return 主页
+ */
++(UIViewController*)getMainViewController;
+
 @end

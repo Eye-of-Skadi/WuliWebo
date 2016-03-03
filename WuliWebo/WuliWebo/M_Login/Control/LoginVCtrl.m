@@ -9,9 +9,9 @@
 #import "LoginVCtrl.h"
 #import "LoginModel.h"
 #import "LoginView.h"
+#import "AppDelegate.h"
 
-
-@interface LoginVCtrl ()
+@interface LoginVCtrl ()<LoginDelegate>
 
 /**
  *  登录按钮
@@ -63,7 +63,9 @@
     
     //添加登录按钮
     [self.view addSubview:self.loginBtn];
-
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
+    appDelegate.loginDelegate = self;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -75,12 +77,41 @@
         if (token == nil) {
             [LoginModel login];
         }else{
-            //            [self skipToMainViewCtrl];
+            
+            [LoginModel jumpToMainViewControllerWithUIViewController:[LoginView getMainViewController] andSender:self];
         }
         
         return [RACSignal empty];
     }];
+    
+    //检测当前是否存在token，并检测token是否失效
+    NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
+    if (token == nil) {
+        [LoginModel login];
+    }else{
+        //存在令牌，检测令牌是否失效
+        if ([LoginModel checkToken]) {
+            
+            [LoginModel jumpToMainViewControllerWithUIViewController:[LoginView getMainViewController] andSender:self];
+            
+        }else{
+            [LoginModel login];
+        }
+        
+    }
 
+}
+
+#pragma mark - LoginDelegate
+-(void)loginSuccess{
+    
+    NSLog(@"登录成功");
+    [LoginModel jumpToMainViewControllerWithUIViewController:[LoginView getMainViewController] andSender:self];
+}
+
+-(void)loginFailed{
+    
+    NSLog(@"登录失败");
 }
 
 #pragma mark - getter And setter

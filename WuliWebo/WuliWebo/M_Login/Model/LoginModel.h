@@ -22,4 +22,13 @@
  */
 +(void)login;
 
+
+/**
+ *  跳到主页
+ *
+ *  @param vc     主页
+ *  @param sender 登录页
+ */
++(void)jumpToMainViewControllerWithUIViewController:(UIViewController*)vc andSender:(UIViewController*)sender;
+
 @end

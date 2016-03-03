@@ -16,6 +16,10 @@
 		96958FBE1C842CD20086C548 /* LoginVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FBB1C842CD20086C548 /* LoginVCtrl.m */; };
 		96958FC21C843ADD0086C548 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC11C843ADD0086C548 /* LoginModel.m */; };
 		96958FC51C843AF60086C548 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC41C843AF60086C548 /* LoginView.m */; };
+		96E362861C86D6B7003F526D /* HomeVCtrl].m in Sources */ = {isa = PBXBuildFile; fileRef = 96E362851C86D6B7003F526D /* HomeVCtrl].m */; };
+		96E362901C86E008003F526D /* NSDictionary+Verified.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628A1C86E008003F526D /* NSDictionary+Verified.m */; };
+		96E362911C86E008003F526D /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628C1C86E008003F526D /* NSString+Check.m */; };
+		96E362921C86E008003F526D /* PublicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628F1C86E008003F526D /* PublicMethods.m */; };
 		EED482D2E6DBFAE763F9A50E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C84B8EC5C81EE4035E5B96 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +68,14 @@
 		96958FC11C843ADD0086C548 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		96958FC31C843AF60086C548 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		96958FC41C843AF60086C548 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		96E362841C86D6B7003F526D /* HomeVCtrl].h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeVCtrl].h"; sourceTree = "<group>"; };
+		96E362851C86D6B7003F526D /* HomeVCtrl].m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeVCtrl].m"; sourceTree = "<group>"; };
+		96E362891C86E008003F526D /* NSDictionary+Verified.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Verified.h"; sourceTree = "<group>"; };
+		96E3628A1C86E008003F526D /* NSDictionary+Verified.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Verified.m"; sourceTree = "<group>"; };
+		96E3628B1C86E008003F526D /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
+		96E3628C1C86E008003F526D /* NSString+Check.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Check.m"; sourceTree = "<group>"; };
+		96E3628E1C86E008003F526D /* PublicMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicMethods.h; sourceTree = "<group>"; };
+		96E3628F1C86E008003F526D /* PublicMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicMethods.m; sourceTree = "<group>"; };
 		C0C84B8EC5C81EE4035E5B96 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE048B19D2E2FCC3B147AA46 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +155,8 @@
 		96461AA31C7C999600986E0D /* WuliWebo */ = {
 			isa = PBXGroup;
 			children = (
+				96E362871C86E008003F526D /* Public */,
+				96E3627F1C86CEAE003F526D /* M_Home */,
 				9600F91B1C8034FB00659A97 /* M_Login */,
 				96461AA71C7C999600986E0D /* AppDelegate.h */,
 				96461AA81C7C999600986E0D /* AppDelegate.m */,
@@ -208,6 +222,68 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		96E3627F1C86CEAE003F526D /* M_Home */ = {
+			isa = PBXGroup;
+			children = (
+				96E362801C86CEAE003F526D /* Control */,
+				96E362811C86CEAE003F526D /* Model */,
+				96E362821C86CEAE003F526D /* View */,
+			);
+			path = M_Home;
+			sourceTree = "<group>";
+		};
+		96E362801C86CEAE003F526D /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				96E362841C86D6B7003F526D /* HomeVCtrl].h */,
+				96E362851C86D6B7003F526D /* HomeVCtrl].m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		96E362811C86CEAE003F526D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96E362821C86CEAE003F526D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96E362871C86E008003F526D /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				96E362881C86E008003F526D /* Category */,
+				96E3628D1C86E008003F526D /* PublicMethod */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		96E362881C86E008003F526D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				96E362891C86E008003F526D /* NSDictionary+Verified.h */,
+				96E3628A1C86E008003F526D /* NSDictionary+Verified.m */,
+				96E3628B1C86E008003F526D /* NSString+Check.h */,
+				96E3628C1C86E008003F526D /* NSString+Check.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		96E3628D1C86E008003F526D /* PublicMethod */ = {
+			isa = PBXGroup;
+			children = (
+				96E3628E1C86E008003F526D /* PublicMethods.h */,
+				96E3628F1C86E008003F526D /* PublicMethods.m */,
+			);
+			path = PublicMethod;
+			sourceTree = "<group>";
+		};
 		DD1F4828F8ECA89B329CCDF3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,9 +301,9 @@
 			buildConfigurationList = 96461ACE1C7C999700986E0D /* Build configuration list for PBXNativeTarget "WuliWebo" */;
 			buildPhases = (
 				39F8344FB5EC71C23EFDD159 /* Check Pods Manifest.lock */,
-				96461A9D1C7C999600986E0D /* Sources */,
 				96461A9E1C7C999600986E0D /* Frameworks */,
 				96461A9F1C7C999600986E0D /* Resources */,
+				96461A9D1C7C999600986E0D /* Sources */,
 				C2CACD4EF4BC6B98205F1274 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -381,10 +457,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96E362861C86D6B7003F526D /* HomeVCtrl].m in Sources */,
 				96958FBE1C842CD20086C548 /* LoginVCtrl.m in Sources */,
 				96958FC21C843ADD0086C548 /* LoginModel.m in Sources */,
+				96E362901C86E008003F526D /* NSDictionary+Verified.m in Sources */,
+				96E362911C86E008003F526D /* NSString+Check.m in Sources */,
 				96461AA91C7C999600986E0D /* AppDelegate.m in Sources */,
 				96958FC51C843AF60086C548 /* LoginView.m in Sources */,
+				96E362921C86E008003F526D /* PublicMethods.m in Sources */,
 				96461AA61C7C999600986E0D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

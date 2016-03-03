@@ -38,4 +38,19 @@
     [WeiboSDK sendRequest:request];
 }
 
+/**
+ *  跳到主页
+ *
+ *  @param vc     主页
+ *  @param sender 登录页
+ */
++(void)jumpToMainViewControllerWithUIViewController:(UIViewController*)vc andSender:(UIViewController*)sender{
+    
+    if ([vc isKindOfClass:[UITabBarController class]]) {
+        NSLog(@"主页是tabbar框架");
+        
+        [sender presentViewController:vc animated:YES completion:nil];
+    }
+}
+
 @end

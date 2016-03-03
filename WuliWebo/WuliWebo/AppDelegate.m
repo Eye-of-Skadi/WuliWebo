@@ -38,7 +38,7 @@
 
     [self.window makeKeyAndVisible];
     
-
+    
     return YES;
 }
 
@@ -56,14 +56,12 @@
     }
 }
 
-- (void)didReceiveWeiboResponse:(WBBaseResponse *)response
-{
+- (void)didReceiveWeiboResponse:(WBBaseResponse *)response{
     
-    if ([response isKindOfClass:WBAuthorizeResponse.class])
-    {
+    if ([response isKindOfClass:WBAuthorizeResponse.class]){
+        
         if (response.statusCode == WeiboSDKResponseStatusCodeSuccess) {
             //成功
-            
             NSLog(@"登录成功");
             
             self.wbtoken = [(WBAuthorizeResponse *)response accessToken];
@@ -80,6 +78,7 @@
                 
                 [[NSUserDefaults standardUserDefaults]synchronize];
             }
+            
         } else {
             //失败
             if ([self.loginDelegate respondsToSelector:@selector(loginFailed)]) {
@@ -90,8 +89,8 @@
     }
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
     return [WeiboSDK handleOpenURL:url delegate:self];
 }
 
