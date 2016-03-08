@@ -45,6 +45,9 @@ PODS:
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
   - RKNotificationHub (2.0.1)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
   - SECoreTextView (0.8.5)
   - UIAlertView-Blocks (1.0)
   - WeiboSDK (3.1.3)
@@ -59,6 +62,7 @@ DEPENDENCIES:
   - pop
   - ReactiveCocoa
   - RKNotificationHub
+  - SDWebImage
   - SECoreTextView
   - UIAlertView-Blocks (~> 1.0)
   - WeiboSDK (from `https://github.com/sinaweibosdk/weibo_ios_sdk.git`)
@@ -83,6 +87,7 @@ SPEC CHECKSUMS:
   pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   RKNotificationHub: d80905a948c79c11673345f807133a0bfd17e320
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SECoreTextView: 5f3bedc0c9ffc2f4c109c37142f25c12f37368dd
   UIAlertView-Blocks: 7904744fca618afbd2ec646608924f5e69d5acd1
   WeiboSDK: 5f2a707c4569a64f4641f4171acd712016f24342

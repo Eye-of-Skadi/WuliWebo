@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9623304D1C8836EA009662FB /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9623304C1C8836EA009662FB /* HomeView.m */; };
+		962330501C883722009662FB /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9623304F1C883722009662FB /* HomeModel.m */; };
+		962330531C892BB6009662FB /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 962330521C892BB6009662FB /* HomeCell.m */; };
 		96461AA61C7C999600986E0D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA51C7C999600986E0D /* main.m */; };
 		96461AA91C7C999600986E0D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AA81C7C999600986E0D /* AppDelegate.m */; };
 		96461AB11C7C999600986E0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB01C7C999600986E0D /* Assets.xcassets */; };
@@ -16,7 +19,7 @@
 		96958FBE1C842CD20086C548 /* LoginVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FBB1C842CD20086C548 /* LoginVCtrl.m */; };
 		96958FC21C843ADD0086C548 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC11C843ADD0086C548 /* LoginModel.m */; };
 		96958FC51C843AF60086C548 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC41C843AF60086C548 /* LoginView.m */; };
-		96E362861C86D6B7003F526D /* HomeVCtrl].m in Sources */ = {isa = PBXBuildFile; fileRef = 96E362851C86D6B7003F526D /* HomeVCtrl].m */; };
+		96E362861C86D6B7003F526D /* HomeVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E362851C86D6B7003F526D /* HomeVCtrl.m */; };
 		96E362901C86E008003F526D /* NSDictionary+Verified.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628A1C86E008003F526D /* NSDictionary+Verified.m */; };
 		96E362911C86E008003F526D /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628C1C86E008003F526D /* NSString+Check.m */; };
 		96E362921C86E008003F526D /* PublicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628F1C86E008003F526D /* PublicMethods.m */; };
@@ -48,6 +51,12 @@
 		9600F9121C80209F00659A97 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9600F9141C8020B000659A97 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		9600F9161C8020E100659A97 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9623304B1C8836EA009662FB /* HomeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
+		9623304C1C8836EA009662FB /* HomeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
+		9623304E1C883722009662FB /* HomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeModel.h; sourceTree = "<group>"; };
+		9623304F1C883722009662FB /* HomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeModel.m; sourceTree = "<group>"; };
+		962330511C892BB6009662FB /* HomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCell.h; sourceTree = "<group>"; };
+		962330521C892BB6009662FB /* HomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCell.m; sourceTree = "<group>"; };
 		96461AA11C7C999600986E0D /* WuliWebo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WuliWebo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96461AA51C7C999600986E0D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		96461AA71C7C999600986E0D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,8 +77,8 @@
 		96958FC11C843ADD0086C548 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		96958FC31C843AF60086C548 /* LoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		96958FC41C843AF60086C548 /* LoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
-		96E362841C86D6B7003F526D /* HomeVCtrl].h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HomeVCtrl].h"; sourceTree = "<group>"; };
-		96E362851C86D6B7003F526D /* HomeVCtrl].m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "HomeVCtrl].m"; sourceTree = "<group>"; };
+		96E362841C86D6B7003F526D /* HomeVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVCtrl.h; sourceTree = "<group>"; };
+		96E362851C86D6B7003F526D /* HomeVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVCtrl.m; sourceTree = "<group>"; };
 		96E362891C86E008003F526D /* NSDictionary+Verified.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Verified.h"; sourceTree = "<group>"; };
 		96E3628A1C86E008003F526D /* NSDictionary+Verified.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Verified.m"; sourceTree = "<group>"; };
 		96E3628B1C86E008003F526D /* NSString+Check.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Check.h"; sourceTree = "<group>"; };
@@ -235,8 +244,8 @@
 		96E362801C86CEAE003F526D /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				96E362841C86D6B7003F526D /* HomeVCtrl].h */,
-				96E362851C86D6B7003F526D /* HomeVCtrl].m */,
+				96E362841C86D6B7003F526D /* HomeVCtrl.h */,
+				96E362851C86D6B7003F526D /* HomeVCtrl.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -244,6 +253,8 @@
 		96E362811C86CEAE003F526D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9623304E1C883722009662FB /* HomeModel.h */,
+				9623304F1C883722009662FB /* HomeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +262,10 @@
 		96E362821C86CEAE003F526D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9623304B1C8836EA009662FB /* HomeView.h */,
+				9623304C1C8836EA009662FB /* HomeView.m */,
+				962330511C892BB6009662FB /* HomeCell.h */,
+				962330521C892BB6009662FB /* HomeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,13 +472,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96E362861C86D6B7003F526D /* HomeVCtrl].m in Sources */,
+				96E362861C86D6B7003F526D /* HomeVCtrl.m in Sources */,
 				96958FBE1C842CD20086C548 /* LoginVCtrl.m in Sources */,
 				96958FC21C843ADD0086C548 /* LoginModel.m in Sources */,
 				96E362901C86E008003F526D /* NSDictionary+Verified.m in Sources */,
 				96E362911C86E008003F526D /* NSString+Check.m in Sources */,
 				96461AA91C7C999600986E0D /* AppDelegate.m in Sources */,
+				962330531C892BB6009662FB /* HomeCell.m in Sources */,
 				96958FC51C843AF60086C548 /* LoginView.m in Sources */,
+				9623304D1C8836EA009662FB /* HomeView.m in Sources */,
+				962330501C883722009662FB /* HomeModel.m in Sources */,
 				96E362921C86E008003F526D /* PublicMethods.m in Sources */,
 				96461AA61C7C999600986E0D /* main.m in Sources */,
 			);

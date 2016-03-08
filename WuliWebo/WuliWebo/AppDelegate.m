@@ -34,7 +34,11 @@
      *  设置主页
      */
     LoginVCtrl *loginVC = [[LoginVCtrl alloc]init];
-    self.window.rootViewController = loginVC;
+    
+    UINavigationController *mainNav = [[UINavigationController alloc]initWithRootViewController:loginVC];
+    [mainNav setNavigationBarHidden:YES];
+    
+    self.window.rootViewController = mainNav;
 
     [self.window makeKeyAndVisible];
     
@@ -47,12 +51,10 @@
     return UIInterfaceOrientationMaskAll;
 }
 
-- (void)didReceiveWeiboRequest:(WBBaseRequest *)request
-{
-    if ([request isKindOfClass:WBProvideMessageForWeiboRequest.class])
-    {
-        //        ProvideMessageForWeiboViewController *controller = [[[ProvideMessageForWeiboViewController alloc] init] autorelease];
-        //        [self.viewController presentModalViewController:controller animated:YES];
+- (void)didReceiveWeiboRequest:(WBBaseRequest *)request{
+    
+    if ([request isKindOfClass:WBProvideMessageForWeiboRequest.class]){
+        
     }
 }
 
@@ -72,11 +74,9 @@
                 
                 NSDate *expirationDate = [(WBAuthorizeResponse *)response expirationDate];
                 
-                [[NSUserDefaults standardUserDefaults]setObject:self.wbtoken forKey:@"Token"];
-                [[NSUserDefaults standardUserDefaults]setObject:self.userID forKey:@"UserID"];
-                [[NSUserDefaults standardUserDefaults]setObject:expirationDate forKey:@"expirationDate"];
-                
-                [[NSUserDefaults standardUserDefaults]synchronize];
+                [PublicMethods saveToUserdefaultsWithKey:@"Token" andObj:self.wbtoken];
+                [PublicMethods saveToUserdefaultsWithKey:@"UserID" andObj:self.userID];
+                [PublicMethods saveToUserdefaultsWithKey:@"expirationDate" andObj:expirationDate];
             }
             
         } else {

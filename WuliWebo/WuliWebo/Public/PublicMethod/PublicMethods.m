@@ -39,4 +39,64 @@
     [dataTask resume];
 }
 
+#pragma mark - NSUserDefaults
+/**
+ *  从NSUserDefaults中获取值
+ *
+ *  @param key 键
+ *
+ *  @return 对象
+ */
++(id)getObjFromUserdefaultsWithKey:(NSString*)key{
+    
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
+}
+
+/**
+ *  保存值到NSUserDefaults中
+ *
+ *  @param key 键
+ *  @param obj 值
+ */
++(void)saveToUserdefaultsWithKey:(NSString*)key andObj:(id)obj{
+    
+    [[NSUserDefaults standardUserDefaults]setObject:obj forKey:key];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+/**
+ *  从NSUserDefaults中获取bool值
+ *
+ *  @param key 键
+ *
+ *  @return 对象
+ */
++(BOOL)getBoolFromUserdefaultsWithKey:(NSString*)key{
+    
+    return [[NSUserDefaults standardUserDefaults] boolForKey:key];
+}
+
+/**
+ *  保存bool值到NSUserDefaults中
+ *
+ *  @param key 键
+ *  @param boolValue bool值
+ */
++(void)saveToUserdefaultsWithKey:(NSString*)key andBool:(BOOL)boolValue{
+    
+    [[NSUserDefaults standardUserDefaults]setBool:boolValue forKey:key];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
+/**
+ *  从NSUserDefaults中去除值
+ *
+ *  @param key 键
+ */
++(void)removeValueFromUserdefaultsWithKey:(NSString*)key{
+    
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:key];
+    [[NSUserDefaults standardUserDefaults]synchronize];
+}
+
 @end

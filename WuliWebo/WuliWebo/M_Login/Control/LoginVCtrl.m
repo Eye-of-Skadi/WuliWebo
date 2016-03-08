@@ -66,6 +66,22 @@
     
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];
     appDelegate.loginDelegate = self;
+    
+    //检测当前是否存在token，并检测token是否失效
+    NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
+    if (token == nil) {
+        [LoginModel login];
+    }else{
+        //存在令牌，检测令牌是否失效
+        if ([LoginModel checkToken]) {
+            
+            [LoginModel jumpToMainViewControllerWithUIViewController:[LoginView getMainViewController] andSender:self];
+            
+        }else{
+            [LoginModel login];
+        }
+        
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -84,22 +100,6 @@
         return [RACSignal empty];
     }];
     
-    //检测当前是否存在token，并检测token是否失效
-    NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
-    if (token == nil) {
-        [LoginModel login];
-    }else{
-        //存在令牌，检测令牌是否失效
-        if ([LoginModel checkToken]) {
-            
-            [LoginModel jumpToMainViewControllerWithUIViewController:[LoginView getMainViewController] andSender:self];
-            
-        }else{
-            [LoginModel login];
-        }
-        
-    }
-
 }
 
 #pragma mark - LoginDelegate

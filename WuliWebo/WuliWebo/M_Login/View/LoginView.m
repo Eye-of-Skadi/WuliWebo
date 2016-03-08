@@ -7,7 +7,7 @@
 //
 
 #import "LoginView.h"
-#import "HomeVCtrl].h"
+#import "HomeVCtrl.h"
 
 @implementation LoginView
 
@@ -45,7 +45,7 @@
 +(UIViewController*)getMainViewController{
     
     //主页
-    HomeVCtrl_ *homevc = [[HomeVCtrl_ alloc]init];
+    HomeVCtrl *homevc = [[HomeVCtrl alloc]init];
     UINavigationController *homeNav = [[UINavigationController alloc]initWithRootViewController:homevc];
     
     UITabBarController *phone_tab_vc = [[UITabBarController alloc]init];
