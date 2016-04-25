@@ -7,14 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeModel.h"
 
 @interface HomeCell : UITableViewCell
 
-/**
- *  重设界面
- *
- *  @param dic 数据
- */
--(void)resetUIWithobj:(NSDictionary*)dic;
+@property (nonatomic, strong) HomeModel *model;
 
 @end

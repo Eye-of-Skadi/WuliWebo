@@ -99,4 +99,23 @@
     [[NSUserDefaults standardUserDefaults]synchronize];
 }
 
+#pragma mark - 计算指定字符串在指定宽度的前提下的高度
+/**
+ *  计算指定字符串在指定宽度的前提下的高度
+ *
+ *  @param string 字符串
+ *  @param width  指定宽度
+ *  @param font   字号
+ *
+ *  @return 高度
+ */
++ (CGFloat)heightWithString:(NSString *)string andWidth:(CGFloat)width andTextFont:(UIFont*)font{
+    
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(width,MAXFLOAT)//限制最大的宽度和高度
+                                       options:NSStringDrawingUsesFontLeading  |NSStringDrawingUsesLineFragmentOrigin//采用换行模式
+                                    attributes:@{NSFontAttributeName:font}//传人的字体字典
+                                       context:nil];
+    
+    return rect.size.height;
+}
 @end

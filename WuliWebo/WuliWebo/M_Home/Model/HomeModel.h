@@ -10,4 +10,13 @@
 
 @interface HomeModel : NSObject
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+@property (nonatomic, copy, readonly) NSString *identifier;
+@property (nonatomic, copy, readonly) NSString *retweetedText;
+@property (nonatomic, copy, readonly) NSString *content;
+@property (nonatomic, copy, readonly) NSString *username;
+@property (nonatomic, copy, readonly) NSString *time;
+@property (nonatomic, copy, readonly) NSString *userImageName;
+
 @end

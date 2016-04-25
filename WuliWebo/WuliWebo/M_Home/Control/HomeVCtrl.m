@@ -10,12 +10,15 @@
 #import "HomeView.h"
 #import "HomeModel.h"
 #import "HomeCell.h"
+#import <MJRefresh.h>
+#import "UITableView+FDTemplateLayoutCell.h"
 
 #define HOME_URL @"https://api.weibo.com/2/statuses/home_timeline.json?access_token=%@&count=20"
 
 @interface HomeVCtrl ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *sourceAry;
+@property (nonatomic, copy) NSArray *prototypeEntitiesFromJSON;
 
 @end
 
@@ -27,19 +30,28 @@
     
     [self.view setBackgroundColor:WHITE_COLOR];
     
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        
+        [self.tableView.mj_header endRefreshing];
+    }];
+    [self.tableView.mj_header beginRefreshing];
+    [self.tableView registerClass:[HomeCell class] forCellReuseIdentifier:@"HomeCell"];
+    
     NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
     NSString *homeUrl = [NSString stringWithFormat:HOME_URL,token];
 
     [PublicMethods connectWebserviceWithUrlstr:homeUrl andParameter:nil andSuccessBlock:^(id responsObject) {
         
-        NSLog(@"%@",responsObject);
         if ([responsObject isKindOfClass:[NSDictionary class]]) {
             
             id obj = [responsObject verifiedObjectForKey:@"statuses"];
             if ([obj isKindOfClass:[NSArray class]]) {
                 
-                [self.sourceAry addObjectsFromArray:obj];
-                [self.tableView reloadData];
+                [self buildTestDataWithAry:obj Then:^{
+                    [self.sourceAry addObjectsFromArray:self.prototypeEntitiesFromJSON];
+                    [self.tableView reloadData];
+                }];
             }
             
         }
@@ -50,6 +62,54 @@
         NSLog(@"%@",errorDes);
         
     }];
+}
+
+- (void)buildTestDataWithAry:(NSArray*)ary Then:(void (^)(void))then {
+    // Simulate an async request
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        // Convert to `FDFeedEntity`
+        NSMutableArray *entities = @[].mutableCopy;
+        [ary enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+            
+            id userObj = [obj verifiedObjectForKey:@"user"];
+            
+            if ([userObj isKindOfClass:[NSDictionary class]]) {
+                //设置用户信息
+                [dic setObject:[userObj verifiedObjectForKey:@"name"] forKey:@"username"];
+                [dic setObject:[userObj verifiedObjectForKey:@"profile_image_url"] forKey:@"userImageName"];
+            }
+            
+            [dic setObject:[obj verifiedObjectForKey:@"text"] forKey:@"content"];
+            
+            //判断有没有转发内容
+            id retweeted_statusObj = [obj verifiedObjectForKey:@"retweeted_status"];
+            if ([retweeted_statusObj isKindOfClass:[NSDictionary class]]) {
+                
+                //被转发用户
+                id retweetedUserObj = [retweeted_statusObj verifiedObjectForKey:@"user"];
+                
+                if ([retweetedUserObj isKindOfClass:[NSDictionary class]]) {
+                    
+                    NSString *retweetedText = [NSString stringWithFormat:@"%@:%@",[retweetedUserObj verifiedObjectForKey:@"name"],[retweeted_statusObj verifiedObjectForKey:@"text"]];
+                    
+                    [dic setObject:retweetedText forKey:@"retweetedText"];
+                    
+                }
+            }
+
+            
+            [entities addObject:[[HomeModel alloc] initWithDictionary:dic]];
+        }];
+        self.prototypeEntitiesFromJSON = entities;
+        
+        // Callback
+        dispatch_async(dispatch_get_main_queue(), ^{
+            !then ?: then();
+        });
+    });
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -86,14 +146,30 @@
         
     }
     
-    [homeCell resetUIWithobj:[self.sourceAry objectAtIndex:indexPath.row]];
+//    [homeCell resetUIWithobj:[self.sourceAry objectAtIndex:indexPath.row]];
     
+    [self configureCell:homeCell atIndexPath:indexPath];
     return homeCell;
+}
+
+- (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
+//    if (indexPath.row % 2 == 0) {
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
+    cell.model = [self.sourceAry objectAtIndex:indexPath.row];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 200;
+//    return [HomeCell heightForHomeCellWithObj:[self.sourceAry objectAtIndex:indexPath.row]];
+    
+    return [tableView fd_heightForCellWithIdentifier:@"HomeCell" cacheByIndexPath:indexPath configuration:^(HomeCell *cell) {
+        [self configureCell:cell atIndexPath:indexPath];
+    }];
+
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

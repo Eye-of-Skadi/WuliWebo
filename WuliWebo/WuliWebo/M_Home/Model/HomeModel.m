@@ -10,4 +10,25 @@
 
 @implementation HomeModel
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+{
+    self = super.init;
+    if (self) {
+        
+        _identifier = [self uniqueIdentifier];
+        _userImageName = dictionary[@"userImageName"];
+        _username = dictionary[@"username"];
+        _retweetedText = dictionary[@"retweetedText"];
+        _content = dictionary[@"content"];
+        _time = dictionary[@"time"];
+    }
+    return self;
+}
+
+- (NSString *)uniqueIdentifier
+{
+    static NSInteger counter = 0;
+    return [NSString stringWithFormat:@"unique-id-%@", @(counter++)];
+}
+
 @end

@@ -31,6 +31,16 @@
  */
 @property (strong, nonatomic) UILabel *contentLabel;
 
+/**
+ *  分割线
+ */
+@property (strong, nonatomic) UIView *lineView;
+
+/**
+ *  转发内容
+ */
+@property (strong, nonatomic) UILabel *retweetedLabel;
+
 @end
 
 @implementation HomeCell
@@ -65,59 +75,95 @@
     }];
     
     //头像
-    [self.baseView addSubview:self.userImageView];
+    [self.contentView addSubview:self.userImageView];
     [self.userImageView mas_makeConstraints:^(MASConstraintMaker *make) {
        
-        make.left.equalTo(self.baseView.mas_left).with.offset(10);
-        make.top.equalTo(self.baseView.mas_top).with.offset(10);
-        
+        make.left.equalTo(self.contentView.mas_left).with.offset(14);
+        make.top.equalTo(self.contentView.mas_top).with.offset(14);
+//        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(0);
         make.height.mas_equalTo(50);
         make.width.mas_equalTo(50);
     }];
     
     //名字
-    [self.baseView addSubview:self.userNameLabel];
+    [self.contentView addSubview:self.userNameLabel];
     [self.userNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.left.equalTo(self.userImageView.mas_right).with.offset(10);
-        make.right.equalTo(self.baseView.mas_right).with.offset(-10);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-14);
         make.top.equalTo(self.userImageView.mas_top).with.offset(5);
 
         make.height.mas_equalTo(20);
     }];
     
     //内容
-    [self.baseView addSubview:self.contentLabel];
+    [self.contentView addSubview:self.contentLabel];
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.baseView.mas_left).with.offset(10);
-        make.right.equalTo(self.baseView.mas_right).with.offset(-10);
+        make.left.equalTo(self.contentView.mas_left).with.offset(10);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-10);
         make.top.equalTo(self.userImageView.mas_bottom).with.offset(5);
-        
-        make.height.mas_equalTo(30);
+//        make.bottom.equalTo(self.lineView.mas_top).with.offset(-5);
+//        make.height.mas_equalTo(10);
 
     }];
+
+    //线
+    [self.contentView addSubview:self.lineView];
+    [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(self.contentView.mas_left).with.offset(10);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-10);
+        make.top.equalTo(self.contentLabel.mas_bottom).with.offset(5);
+        
+        make.height.mas_equalTo(1);
+
+    }];
+
+    //转发内容
+    [self.contentView addSubview:self.retweetedLabel];
+    [self.retweetedLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView.mas_left).with.offset(10);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-10);
+        make.top.equalTo(self.lineView.mas_bottom).with.offset(5);
+        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-10);
+
+//        make.height.mas_equalTo(0);
+        
+    }];
+
 }
 
-/**
- *  重设界面
- *
- *  @param dic 数据
- */
--(void)resetUIWithobj:(NSDictionary*)dic{
+-(void)setModel:(HomeModel *)model{
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        id userObj = [dic verifiedObjectForKey:@"user"];
-        if ([userObj isKindOfClass:[NSDictionary class]]) {
-            //设置用户信息
-            [self.userImageView sd_setImageWithURL:[NSURL URLWithString:[userObj verifiedObjectForKey:@"profile_image_url"]] placeholderImage:nil];
-            [self.userNameLabel setText:[userObj verifiedObjectForKey:@"name"]];
-        }
+    _model = model;
+    
+    [self.userImageView sd_setImageWithURL:[NSURL URLWithString:model.userImageName] placeholderImage:[UIImage imageNamed:@"placholder"]];
+    self.userNameLabel.text = model.username;
+    
+    self.contentLabel.text = model.content;
+    
+    //处理内容下边距根据转发内容有没有改变
+    if (model.retweetedText.length > 0) {
         
-        //内容
-        [self.contentLabel setText:[dic verifiedObjectForKey:@"text"]];
+        [self.retweetedLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_left).with.offset(10);
+            make.right.equalTo(self.contentView.mas_right).with.offset(-10);
+            make.top.equalTo(self.lineView.mas_bottom).with.offset(5);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-10);
 
-    });
+        }];
+    }else{
+        [self.retweetedLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.contentView.mas_left).with.offset(10);
+            make.right.equalTo(self.contentView.mas_right).with.offset(-10);
+            make.top.equalTo(self.lineView.mas_bottom).with.offset(5);
+            make.bottom.equalTo(self.contentView.mas_bottom).with.offset(0);
+            
+        }];
+    }
     
+    [self.lineView setHidden:(model.retweetedText.length>0?NO:YES)];
+    self.retweetedLabel.text = model.retweetedText;
 }
 
 #pragma mark - getter and setter
@@ -170,15 +216,51 @@
     return _userNameLabel;
 }
 
+/**
+ *  内容
+ *
+ *  @return 内容
+ */
 -(UILabel *)contentLabel{
     
     if (!_contentLabel) {
         
         _contentLabel = [[UILabel alloc]init];
-        
+        [_contentLabel setNumberOfLines:0];
+        [_contentLabel setFont:[UIFont systemFontOfSize:15.0f]];
     }
     
     return _contentLabel;
+}
+
+/**
+ *  线
+ *
+ *  @return 线
+ */
+-(UIView *)lineView{
+    
+    if (!_lineView) {
+        
+        _lineView = [[UIView alloc]init];
+        [_lineView setBackgroundColor:[UIColor colorWithRed:0.953 green:0.953 blue:0.953 alpha:1.00]];
+        
+    }
+    
+    return _lineView;
+}
+
+-(UILabel *)retweetedLabel{
+    
+    if (!_retweetedLabel) {
+        
+        _retweetedLabel = [[UILabel alloc]init];
+        [_retweetedLabel setNumberOfLines:0];
+        [_retweetedLabel setFont:[UIFont systemFontOfSize:15.0f]];
+    }
+    
+    return _retweetedLabel;
+
 }
 
 @end

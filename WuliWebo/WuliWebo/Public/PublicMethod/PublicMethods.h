@@ -62,4 +62,16 @@
  */
 +(void)removeValueFromUserdefaultsWithKey:(NSString*)key;
 
+#pragma mark - 计算指定字符串在指定宽度的前提下的高度
+/**
+ *  计算指定字符串在指定宽度的前提下的高度
+ *
+ *  @param string 字符串
+ *  @param width  指定宽度
+ *  @param font   字号
+ *
+ *  @return 高度
+ */
++ (CGFloat)heightWithString:(NSString *)string andWidth:(CGFloat)width andTextFont:(UIFont*)font;
+
 @end
