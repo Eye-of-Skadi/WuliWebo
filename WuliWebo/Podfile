@@ -17,5 +17,5 @@ target 'WuliWebo' do
   pod 'SDWebImage'
   pod 'MJRefresh'
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
-
+  pod 'MWPhotoBrowser'
 end

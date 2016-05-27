@@ -10,8 +10,8 @@
 
 @implementation HomeModel
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary
-{
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary{
+    
     self = super.init;
     if (self) {
         
@@ -20,13 +20,16 @@
         _username = dictionary[@"username"];
         _retweetedText = dictionary[@"retweetedText"];
         _content = dictionary[@"content"];
+        
+        _pic_urls = dictionary[@"pic_urls"];
+        
         _time = dictionary[@"time"];
     }
     return self;
 }
 
-- (NSString *)uniqueIdentifier
-{
+- (NSString *)uniqueIdentifier{
+    
     static NSInteger counter = 0;
     return [NSString stringWithFormat:@"unique-id-%@", @(counter++)];
 }

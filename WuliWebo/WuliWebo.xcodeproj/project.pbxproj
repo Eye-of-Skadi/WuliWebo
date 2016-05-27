@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2142833B2BB7A54A996B5249 /* libPods-WuliWebo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22425F60A23DF119AB802A8B /* libPods-WuliWebo.a */; };
 		9623304D1C8836EA009662FB /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9623304C1C8836EA009662FB /* HomeView.m */; };
 		962330501C883722009662FB /* HomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9623304F1C883722009662FB /* HomeModel.m */; };
 		962330531C892BB6009662FB /* HomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 962330521C892BB6009662FB /* HomeCell.m */; };
@@ -16,6 +17,8 @@
 		96461AB41C7C999600986E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96461AB21C7C999600986E0D /* LaunchScreen.storyboard */; };
 		96461ABF1C7C999700986E0D /* WuliWeboTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461ABE1C7C999700986E0D /* WuliWeboTests.m */; };
 		96461ACA1C7C999700986E0D /* WuliWeboUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96461AC91C7C999700986E0D /* WuliWeboUITests.m */; };
+		966EDDFB1CE5B49D0071F1E3 /* ASHorizontalScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 966EDDF81CE5B49D0071F1E3 /* ASHorizontalScrollView.m */; };
+		966EDDFC1CE5B49D0071F1E3 /* ASHorizontalScrollViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 966EDDFA1CE5B49D0071F1E3 /* ASHorizontalScrollViewDelegate.m */; };
 		96958FBE1C842CD20086C548 /* LoginVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FBB1C842CD20086C548 /* LoginVCtrl.m */; };
 		96958FC21C843ADD0086C548 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC11C843ADD0086C548 /* LoginModel.m */; };
 		96958FC51C843AF60086C548 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 96958FC41C843AF60086C548 /* LoginView.m */; };
@@ -23,7 +26,6 @@
 		96E362901C86E008003F526D /* NSDictionary+Verified.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628A1C86E008003F526D /* NSDictionary+Verified.m */; };
 		96E362911C86E008003F526D /* NSString+Check.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628C1C86E008003F526D /* NSString+Check.m */; };
 		96E362921C86E008003F526D /* PublicMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E3628F1C86E008003F526D /* PublicMethods.m */; };
-		EFDFF12DE718FB80C4F771A6 /* libPods-WuliWebo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FD06ED94B83EE62AE50EDD /* libPods-WuliWebo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22425F60A23DF119AB802A8B /* libPods-WuliWebo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WuliWebo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A23F21BD485B3B42D7A0EB9 /* Pods-WuliWebo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WuliWebo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WuliWebo/Pods-WuliWebo.release.xcconfig"; sourceTree = "<group>"; };
 		78BC6BF956548A99ED9519AE /* Pods-WuliWebo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WuliWebo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WuliWebo/Pods-WuliWebo.debug.xcconfig"; sourceTree = "<group>"; };
-		90FD06ED94B83EE62AE50EDD /* libPods-WuliWebo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WuliWebo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9600F90C1C80208200659A97 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		9600F90E1C80208E00659A97 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		9600F9101C80209800659A97 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -72,6 +74,10 @@
 		96461AC51C7C999700986E0D /* WuliWeboUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WuliWeboUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96461AC91C7C999700986E0D /* WuliWeboUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WuliWeboUITests.m; sourceTree = "<group>"; };
 		96461ACB1C7C999700986E0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		966EDDF71CE5B49D0071F1E3 /* ASHorizontalScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHorizontalScrollView.h; sourceTree = "<group>"; };
+		966EDDF81CE5B49D0071F1E3 /* ASHorizontalScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHorizontalScrollView.m; sourceTree = "<group>"; };
+		966EDDF91CE5B49D0071F1E3 /* ASHorizontalScrollViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASHorizontalScrollViewDelegate.h; sourceTree = "<group>"; };
+		966EDDFA1CE5B49D0071F1E3 /* ASHorizontalScrollViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASHorizontalScrollViewDelegate.m; sourceTree = "<group>"; };
 		96958FB61C8417580086C548 /* WuliWebo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WuliWebo.pch; sourceTree = "<group>"; };
 		96958FBA1C842CD20086C548 /* LoginVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVCtrl.h; sourceTree = "<group>"; };
 		96958FBB1C842CD20086C548 /* LoginVCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVCtrl.m; sourceTree = "<group>"; };
@@ -94,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFDFF12DE718FB80C4F771A6 /* libPods-WuliWebo.a in Frameworks */,
+				2142833B2BB7A54A996B5249 /* libPods-WuliWebo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +130,7 @@
 				9600F9101C80209800659A97 /* Security.framework */,
 				9600F90E1C80208E00659A97 /* ImageIO.framework */,
 				9600F90C1C80208200659A97 /* libsqlite3.tbd */,
-				90FD06ED94B83EE62AE50EDD /* libPods-WuliWebo.a */,
+				22425F60A23DF119AB802A8B /* libPods-WuliWebo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,6 +219,17 @@
 			path = WuliWeboUITests;
 			sourceTree = "<group>";
 		};
+		966EDDF61CE5B49D0071F1E3 /* ASHorizontalScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				966EDDF71CE5B49D0071F1E3 /* ASHorizontalScrollView.h */,
+				966EDDF81CE5B49D0071F1E3 /* ASHorizontalScrollView.m */,
+				966EDDF91CE5B49D0071F1E3 /* ASHorizontalScrollViewDelegate.h */,
+				966EDDFA1CE5B49D0071F1E3 /* ASHorizontalScrollViewDelegate.m */,
+			);
+			path = ASHorizontalScrollView;
+			sourceTree = "<group>";
+		};
 		96958FB91C842CD20086C548 /* Control */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +255,14 @@
 				96958FC41C843AF60086C548 /* LoginView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		96BA75CF1CE356450024384C /* OtherClasslib */ = {
+			isa = PBXGroup;
+			children = (
+				966EDDF61CE5B49D0071F1E3 /* ASHorizontalScrollView */,
+			);
+			path = OtherClasslib;
 			sourceTree = "<group>";
 		};
 		96E3627F1C86CEAE003F526D /* M_Home */ = {
@@ -282,6 +307,7 @@
 		96E362871C86E008003F526D /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				96BA75CF1CE356450024384C /* OtherClasslib */,
 				96E362881C86E008003F526D /* Category */,
 				96E3628D1C86E008003F526D /* PublicMethod */,
 			);
@@ -495,8 +521,10 @@
 				96E362911C86E008003F526D /* NSString+Check.m in Sources */,
 				96461AA91C7C999600986E0D /* AppDelegate.m in Sources */,
 				962330531C892BB6009662FB /* HomeCell.m in Sources */,
+				966EDDFC1CE5B49D0071F1E3 /* ASHorizontalScrollViewDelegate.m in Sources */,
 				96958FC51C843AF60086C548 /* LoginView.m in Sources */,
 				9623304D1C8836EA009662FB /* HomeView.m in Sources */,
+				966EDDFB1CE5B49D0071F1E3 /* ASHorizontalScrollView.m in Sources */,
 				962330501C883722009662FB /* HomeModel.m in Sources */,
 				96E362921C86E008003F526D /* PublicMethods.m in Sources */,
 				96461AA61C7C999600986E0D /* main.m in Sources */,

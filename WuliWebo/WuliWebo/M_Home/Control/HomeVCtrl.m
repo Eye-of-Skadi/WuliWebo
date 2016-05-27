@@ -65,50 +65,65 @@
 }
 
 - (void)buildTestDataWithAry:(NSArray*)ary Then:(void (^)(void))then {
-    // Simulate an async request
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    
+    NSMutableArray *entities = @[].mutableCopy;
+    
+    [ary enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
-        // Convert to `FDFeedEntity`
-        NSMutableArray *entities = @[].mutableCopy;
-        [ary enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+        
+        id userObj = [obj verifiedObjectForKey:@"user"];
+        
+        if ([userObj isKindOfClass:[NSDictionary class]]) {
+            //设置用户信息
+            [dic setObject:[userObj verifiedObjectForKey:@"name"] forKey:@"username"];
+            [dic setObject:[userObj verifiedObjectForKey:@"profile_image_url"] forKey:@"userImageName"];
+        }
+        
+        [dic setObject:[obj verifiedObjectForKey:@"text"] forKey:@"content"];
+        
+        //判断有没有转发内容
+        id retweeted_statusObj = [obj verifiedObjectForKey:@"retweeted_status"];
+        if ([retweeted_statusObj isKindOfClass:[NSDictionary class]]) {
             
-            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+            //被转发用户
+            id retweetedUserObj = [retweeted_statusObj verifiedObjectForKey:@"user"];
             
-            id userObj = [obj verifiedObjectForKey:@"user"];
-            
-            if ([userObj isKindOfClass:[NSDictionary class]]) {
-                //设置用户信息
-                [dic setObject:[userObj verifiedObjectForKey:@"name"] forKey:@"username"];
-                [dic setObject:[userObj verifiedObjectForKey:@"profile_image_url"] forKey:@"userImageName"];
+            if ([retweetedUserObj isKindOfClass:[NSDictionary class]]) {
+                
+                NSString *retweetedText = [NSString stringWithFormat:@"%@:%@",[retweetedUserObj verifiedObjectForKey:@"name"],[retweeted_statusObj verifiedObjectForKey:@"text"]];
+                
+                [dic setObject:retweetedText forKey:@"retweetedText"];
+                
             }
             
-            [dic setObject:[obj verifiedObjectForKey:@"text"] forKey:@"content"];
-            
-            //判断有没有转发内容
-            id retweeted_statusObj = [obj verifiedObjectForKey:@"retweeted_status"];
-            if ([retweeted_statusObj isKindOfClass:[NSDictionary class]]) {
+            id picObj = [retweeted_statusObj verifiedObjectForKey:@"pic_urls"];
+            if ([picObj isKindOfClass:[NSArray class]]) {
+                [dic setObject:picObj forKey:@"pic_urls"];
+            }else{
                 
-                //被转发用户
-                id retweetedUserObj = [retweeted_statusObj verifiedObjectForKey:@"user"];
-                
-                if ([retweetedUserObj isKindOfClass:[NSDictionary class]]) {
-                    
-                    NSString *retweetedText = [NSString stringWithFormat:@"%@:%@",[retweetedUserObj verifiedObjectForKey:@"name"],[retweeted_statusObj verifiedObjectForKey:@"text"]];
-                    
-                    [dic setObject:retweetedText forKey:@"retweetedText"];
-                    
-                }
+                [dic setObject:@[].mutableCopy forKey:@"pic_urls"];
             }
 
+            [dic setObject:picObj forKey:@"pic_urls"];
+        }else{
             
-            [entities addObject:[[HomeModel alloc] initWithDictionary:dic]];
-        }];
-        self.prototypeEntitiesFromJSON = entities;
+            id picObj = [obj verifiedObjectForKey:@"pic_urls"];
+            if ([picObj isKindOfClass:[NSArray class]]) {
+                [dic setObject:picObj forKey:@"pic_urls"];
+            }else{
+                
+                [dic setObject:@[].mutableCopy forKey:@"pic_urls"];
+            }
+        }
         
-        // Callback
-        dispatch_async(dispatch_get_main_queue(), ^{
-            !then ?: then();
-        });
+        [entities addObject:[[HomeModel alloc] initWithDictionary:dic]];
+    }];
+    self.prototypeEntitiesFromJSON = entities;
+    
+    // Callback
+    dispatch_async(dispatch_get_main_queue(), ^{
+        !then ?: then();
     });
 }
 
@@ -145,31 +160,23 @@
         homeCell = [[HomeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         
     }
-    
-//    [homeCell resetUIWithobj:[self.sourceAry objectAtIndex:indexPath.row]];
-    
+
     [self configureCell:homeCell atIndexPath:indexPath];
+    
     return homeCell;
 }
 
 - (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+    
     cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
-//    if (indexPath.row % 2 == 0) {
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    } else {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
     cell.model = [self.sourceAry objectAtIndex:indexPath.row];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    return [HomeCell heightForHomeCellWithObj:[self.sourceAry objectAtIndex:indexPath.row]];
-    
     return [tableView fd_heightForCellWithIdentifier:@"HomeCell" cacheByIndexPath:indexPath configuration:^(HomeCell *cell) {
         [self configureCell:cell atIndexPath:indexPath];
     }];
-
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

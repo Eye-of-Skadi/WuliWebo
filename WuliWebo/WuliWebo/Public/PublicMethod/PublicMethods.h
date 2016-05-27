@@ -74,4 +74,14 @@
  */
 + (CGFloat)heightWithString:(NSString *)string andWidth:(CGFloat)width andTextFont:(UIFont*)font;
 
+/**
+ *  将图片处理成指定大小
+ *
+ *  @param image 要处理的图片
+ *  @param size  指定大小
+ *
+ *  @return 之后的图片
+ */
++(UIImage*)resizeImageWithImage:(UIImage*)sourceImage andTargetSize:(CGSize)size;
+
 @end
