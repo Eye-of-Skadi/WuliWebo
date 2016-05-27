@@ -11,6 +11,6 @@
 
 @interface HomeCell : UITableViewCell
 
-@property (nonatomic, strong) HomeModel *model;
+-(void)UIResetWithModel:(HomeModel *)model;
 
 @end

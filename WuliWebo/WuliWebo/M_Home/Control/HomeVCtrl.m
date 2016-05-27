@@ -11,7 +11,6 @@
 #import "HomeModel.h"
 #import "HomeCell.h"
 #import <MJRefresh.h>
-#import "UITableView+FDTemplateLayoutCell.h"
 
 #define HOME_URL @"https://api.weibo.com/2/statuses/home_timeline.json?access_token=%@&count=20"
 
@@ -35,6 +34,12 @@
         
         [self.tableView.mj_header endRefreshing];
     }];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        [self.tableView.mj_footer endRefreshing];
+        
+    }];
+    
     [self.tableView.mj_header beginRefreshing];
     [self.tableView registerClass:[HomeCell class] forCellReuseIdentifier:@"HomeCell"];
     
@@ -160,23 +165,16 @@
         homeCell = [[HomeCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         
     }
-
-    [self configureCell:homeCell atIndexPath:indexPath];
+    
+    [homeCell UIResetWithModel:[self.sourceAry objectAtIndex:indexPath.row]];
     
     return homeCell;
 }
 
-- (void)configureCell:(HomeCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
-    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
-    cell.model = [self.sourceAry objectAtIndex:indexPath.row];
-}
-
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return [tableView fd_heightForCellWithIdentifier:@"HomeCell" cacheByIndexPath:indexPath configuration:^(HomeCell *cell) {
-        [self configureCell:cell atIndexPath:indexPath];
-    }];
+    HomeModel *model = [self.sourceAry objectAtIndex:indexPath.row];
+    return model.rowHeight;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{

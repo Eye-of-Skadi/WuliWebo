@@ -77,7 +77,6 @@
 -(void)UICommonset{
     
     [self.contentView setBackgroundColor:HOME_BG_COLOR];
-//    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
     
     //底图
     [self.contentView addSubview:self.baseView];
@@ -117,6 +116,8 @@
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
         make.right.equalTo(self.contentView.mas_right).with.offset(-10);
         make.top.equalTo(self.userImageView.mas_bottom).with.offset(5);
+        
+        make.height.mas_equalTo(0);
     }];
     
     //线
@@ -137,53 +138,61 @@
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
         make.right.equalTo(self.contentView.mas_right).with.offset(-10);
         make.top.equalTo(self.lineView.mas_bottom).with.offset(5);
+        make.height.mas_equalTo(0);
+
     }];
 
 
     //图片
     [self.contentView addSubview:self.horizontalScrollView];
     [self.horizontalScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
+        
         make.left.equalTo(self.contentView.mas_left).with.offset(10);
         make.top.equalTo(self.retweetedLabel.mas_bottom).with.offset(5);
         make.right.equalTo(self.contentView.mas_right).with.offset(-10);
         make.height.mas_equalTo(120);
-        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-5);
     }];
-
 }
 
--(void)setModel:(HomeModel *)model{
-    
-    _model = model;
+-(void)UIResetWithModel:(HomeModel *)model{
     
     [self.userImageView sd_setImageWithURL:[NSURL URLWithString:model.userImageName] placeholderImage:[UIImage imageNamed:@"placholder"]];
     self.userNameLabel.text = model.username;
     
     //内容
     self.contentLabel.text = model.content;
+    [self.contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView.mas_left).with.offset(10);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-10);
+        make.top.equalTo(self.userImageView.mas_bottom).with.offset(5);
+        
+        make.height.mas_greaterThanOrEqualTo([PublicMethods heightWithString:self.contentLabel.text andWidth:[UIScreen mainScreen].bounds.size.width-20 andTextFont:self.contentLabel.font]);
+    }];
     
     //转发内容
     self.retweetedLabel.text = model.retweetedText;
-    if (model.retweetedText) {
-        
+    if ([model.retweetedText isEqualToString:@""]) {
         [self.retweetedLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).with.offset(10);
             make.right.equalTo(self.contentView.mas_right).with.offset(-10);
-            make.top.equalTo(self.lineView.mas_bottom).with.offset(5);
+            make.top.equalTo(self.lineView.mas_bottom).with.offset(-5);
+            make.height.mas_equalTo(0);
         }];
 
     }else{
         [self.retweetedLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).with.offset(10);
             make.right.equalTo(self.contentView.mas_right).with.offset(-10);
-            make.top.equalTo(self.lineView.mas_bottom).with.offset(-5);
+            make.top.equalTo(self.lineView.mas_bottom).with.offset(5);
+            make.height.mas_greaterThanOrEqualTo([PublicMethods heightWithString:self.retweetedLabel.text andWidth:[UIScreen mainScreen].bounds.size.width-20 andTextFont:self.retweetedLabel.font]);
         }];
 
     }
-    
+
     //图片
     [self.horizontalScrollView removeAllItems];
+    [self.photos removeAllObjects];
+    
     id picObj = model.pic_urls;
     
     if ([picObj isKindOfClass:[NSArray class]]) {
@@ -209,25 +218,12 @@
         
         
         if (self.images.count < 1) {
-            [self.horizontalScrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                
-                make.left.equalTo(self.contentView.mas_left).with.offset(10);
-                make.top.equalTo(self.retweetedLabel.mas_bottom).with.offset(5);
-                make.right.equalTo(self.contentView.mas_right).with.offset(-10);
-                make.height.mas_equalTo(0);
-                make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-10);
-            }];
+            
+            [_horizontalScrollView setHidden:YES];
 
         }else{
-            [self.horizontalScrollView mas_remakeConstraints:^(MASConstraintMaker *make) {
-                
-                make.left.equalTo(self.contentView.mas_left).with.offset(10);
-                make.top.equalTo(self.retweetedLabel.mas_bottom).with.offset(5);
-                make.right.equalTo(self.contentView.mas_right).with.offset(-10);
-                make.height.mas_equalTo(120);
-                make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-14);
-            }];
-
+            
+            [_horizontalScrollView setHidden:NO];
         }
     }
     [self.lineView setHidden:(model.retweetedText.length>0?NO:YES)];
@@ -247,7 +243,6 @@
         _baseView = [[UIView alloc]init];
         [_baseView setBackgroundColor:WHITE_COLOR];
         _baseView.opaque = YES;
-        _baseView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     
     return _baseView;
@@ -263,8 +258,6 @@
     if (!_userImageView) {
         
         _userImageView = [[UIImageView alloc]init];
-        _userImageView.translatesAutoresizingMaskIntoConstraints = NO;
-
     }
     
     return _userImageView;
@@ -280,7 +273,6 @@
     if (!_userNameLabel) {
         
         _userNameLabel = [[UILabel alloc]init];
-        _userNameLabel.translatesAutoresizingMaskIntoConstraints = NO;
 
     }
     
@@ -299,8 +291,6 @@
         _contentLabel = [[UILabel alloc]init];
         [_contentLabel setNumberOfLines:0];
         [_contentLabel setFont:[UIFont systemFontOfSize:15.0f]];
-        _contentLabel.translatesAutoresizingMaskIntoConstraints = NO;
-
     }
     
     return _contentLabel;
@@ -317,8 +307,6 @@
         
         _lineView = [[UIView alloc]init];
         [_lineView setBackgroundColor:[UIColor colorWithRed:0.953 green:0.953 blue:0.953 alpha:1.00]];
-        _lineView.translatesAutoresizingMaskIntoConstraints = NO;
-
     }
     
     return _lineView;
@@ -331,8 +319,6 @@
         _retweetedLabel = [[UILabel alloc]init];
         [_retweetedLabel setNumberOfLines:0];
         [_retweetedLabel setFont:[UIFont systemFontOfSize:15.0f]];
-        _retweetedLabel.translatesAutoresizingMaskIntoConstraints = NO;
-
     }
     
     return _retweetedLabel;
@@ -344,7 +330,6 @@
     if (!_horizontalScrollView) {
         _horizontalScrollView = [[ASHorizontalScrollView alloc] initWithFrame:CGRectMake(0, 0, 200, 120)];
         _horizontalScrollView.uniformItemSize = CGSizeMake(120, 120);
-        _horizontalScrollView.translatesAutoresizingMaskIntoConstraints = false;
     }
     return _horizontalScrollView;
 }

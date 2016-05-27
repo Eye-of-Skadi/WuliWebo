@@ -57,7 +57,6 @@ PODS:
   - SDWebImage/Core (3.7.3)
   - SECoreTextView (0.8.5)
   - UIAlertView-Blocks (1.0)
-  - UITableView+FDTemplateLayoutCell (1.5.beta)
   - WeiboSDK (3.1.3)
 
 DEPENDENCIES:
@@ -75,7 +74,6 @@ DEPENDENCIES:
   - SDWebImage
   - SECoreTextView
   - UIAlertView-Blocks (~> 1.0)
-  - UITableView+FDTemplateLayoutCell (~> 1.5.beta)
   - WeiboSDK
 
 SPEC CHECKSUMS:
@@ -96,9 +94,8 @@ SPEC CHECKSUMS:
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SECoreTextView: 5f3bedc0c9ffc2f4c109c37142f25c12f37368dd
   UIAlertView-Blocks: 7904744fca618afbd2ec646608924f5e69d5acd1
-  UITableView+FDTemplateLayoutCell: 02b508ab1cb4cea16a8c17ac83d2cd1fd72124f9
   WeiboSDK: acb067053668102cf07d01aa7604350162c2e466
 
-PODFILE CHECKSUM: 84b30fcad8a4033f7ab743df377db77e54c84731
+PODFILE CHECKSUM: 91a7a6e3a26e603a73fe0f92f6459f00d107026d
 
 COCOAPODS: 1.0.0

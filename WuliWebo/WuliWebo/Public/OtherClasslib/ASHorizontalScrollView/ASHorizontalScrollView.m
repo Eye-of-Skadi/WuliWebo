@@ -91,19 +91,9 @@
     }
 }
 
-/// Calculate the exact margin between items
-- (int)calculateMarginBetweenItems
-{
-//    CGFloat scale = [UIScreen mainScreen].scale;
-    //calculate how many items listed on current screen except the last half appearance one
-    int numberOfItemForCurrentWidth = floorf((self.frame.size.width-self.leftMarginPx-self.miniAppearPxOfLastItem)/(_uniformItemSize.width+self.miniMarginPxBetweenItems));
-    
-    return round((self.frame.size.width-self.leftMarginPx-self.miniAppearPxOfLastItem)/numberOfItemForCurrentWidth - _uniformItemSize.width);
-}
-
 - (void)setItemsMarginOnce
 {
-    _itemsMargin = 10;//[self calculateMarginBetweenItems];
+    _itemsMargin = 10;
 }
 
 #pragma mark - remove item
