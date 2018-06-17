@@ -14,6 +14,8 @@
 
 @property (nonatomic, copy, readonly) NSString *identifier;//唯一标志
 
+@property (nonatomic, copy, readonly) NSString *weiboID;//id
+
 @property (nonatomic, copy, readonly) NSString *retweetedText;//转发内容
 @property (nonatomic, copy, readonly) NSString *content;//微博内容
 @property (nonatomic, copy, readonly) NSString *username;//用户名

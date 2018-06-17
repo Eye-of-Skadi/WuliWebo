@@ -13,6 +13,9 @@
 #import <MJRefresh.h>
 
 #define HOME_URL @"https://api.weibo.com/2/statuses/home_timeline.json?access_token=%@&count=20"
+//下拉刷新
+#define HOME_DOWN_URL @"https://api.weibo.com/2/statuses/home_timeline.json?access_token=%@&count=50&since_id=%@"
+#define HOME_UP_URL @"https://api.weibo.com/2/statuses/home_timeline.json?access_token=%@&count=20&max_id=%@"
 
 @interface HomeVCtrl ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,41 +35,101 @@
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
         
-        [self.tableView.mj_header endRefreshing];
+        //下拉刷新
+        NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
+        HomeModel *model = self.sourceAry.firstObject;
+        
+        NSString *homeUrl = [NSString stringWithFormat:HOME_DOWN_URL,token,model.weiboID];
+        [PublicMethods connectWebserviceWithUrlstr:homeUrl andParameter:nil andSuccessBlock:^(id responsObject) {
+            
+            [self.tableView.mj_header endRefreshing];
+
+            if ([responsObject isKindOfClass:[NSDictionary class]]) {
+                
+                id obj = [responsObject verifiedObjectForKey:@"statuses"];
+                if ([obj isKindOfClass:[NSArray class]]) {
+                    
+                    [self buildTestDataWithAry:obj Then:^{
+                        [self.sourceAry addObjectsFromArray:self.prototypeEntitiesFromJSON];
+                        [self.tableView reloadData];
+                    }];
+                }
+                
+            }
+            
+            
+        } andFaildBlock:^(NSString *errorDes) {
+            
+            NSLog(@"%@",errorDes);
+            [self.tableView.mj_header endRefreshing];
+
+        }];
+
     }];
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         // 进入刷新状态后会自动调用这个block
-        [self.tableView.mj_footer endRefreshing];
+        
+        //下拉刷新
+        NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
+        HomeModel *model = self.sourceAry.lastObject;
+        
+        NSString *homeUrl = [NSString stringWithFormat:HOME_UP_URL,token,model.weiboID];
+        [PublicMethods connectWebserviceWithUrlstr:homeUrl andParameter:nil andSuccessBlock:^(id responsObject) {
+            
+            [self.tableView.mj_footer endRefreshing];
+            
+            if ([responsObject isKindOfClass:[NSDictionary class]]) {
+                
+                id obj = [responsObject verifiedObjectForKey:@"statuses"];
+                if ([obj isKindOfClass:[NSArray class]]) {
+                    
+                    [self buildTestDataWithAry:obj Then:^{
+                        [self.sourceAry addObjectsFromArray:self.prototypeEntitiesFromJSON];
+                        [self.tableView reloadData];
+                    }];
+                }
+                
+            }
+            
+            
+        } andFaildBlock:^(NSString *errorDes) {
+            
+            NSLog(@"%@",errorDes);
+            [self.tableView.mj_footer endRefreshing];
+            
+        }];
+
         
     }];
     
     [self.tableView.mj_header beginRefreshing];
+    [self.tableView.mj_footer setAutomaticallyHidden:YES];
     [self.tableView registerClass:[HomeCell class] forCellReuseIdentifier:@"HomeCell"];
     
-    NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
-    NSString *homeUrl = [NSString stringWithFormat:HOME_URL,token];
-
-    [PublicMethods connectWebserviceWithUrlstr:homeUrl andParameter:nil andSuccessBlock:^(id responsObject) {
-        
-        if ([responsObject isKindOfClass:[NSDictionary class]]) {
-            
-            id obj = [responsObject verifiedObjectForKey:@"statuses"];
-            if ([obj isKindOfClass:[NSArray class]]) {
-                
-                [self buildTestDataWithAry:obj Then:^{
-                    [self.sourceAry addObjectsFromArray:self.prototypeEntitiesFromJSON];
-                    [self.tableView reloadData];
-                }];
-            }
-            
-        }
-        
-        
-    } andFaildBlock:^(NSString *errorDes) {
-        
-        NSLog(@"%@",errorDes);
-        
-    }];
+//    NSString *token = [[NSUserDefaults standardUserDefaults]stringForKey:@"Token"];
+//    NSString *homeUrl = [NSString stringWithFormat:HOME_URL,token];
+//
+//    [PublicMethods connectWebserviceWithUrlstr:homeUrl andParameter:nil andSuccessBlock:^(id responsObject) {
+//        
+//        if ([responsObject isKindOfClass:[NSDictionary class]]) {
+//            
+//            id obj = [responsObject verifiedObjectForKey:@"statuses"];
+//            if ([obj isKindOfClass:[NSArray class]]) {
+//                
+//                [self buildTestDataWithAry:obj Then:^{
+//                    [self.sourceAry addObjectsFromArray:self.prototypeEntitiesFromJSON];
+//                    [self.tableView reloadData];
+//                }];
+//            }
+//            
+//        }
+//        
+//        
+//    } andFaildBlock:^(NSString *errorDes) {
+//        
+//        NSLog(@"%@",errorDes);
+//        
+//    }];
 }
 
 - (void)buildTestDataWithAry:(NSArray*)ary Then:(void (^)(void))then {
@@ -121,6 +184,8 @@
                 [dic setObject:@[].mutableCopy forKey:@"pic_urls"];
             }
         }
+        
+        [dic setObject:[obj verifiedObjectForKey:@"id"] forKey:@"weiboID"];
         
         [entities addObject:[[HomeModel alloc] initWithDictionary:dic]];
     }];

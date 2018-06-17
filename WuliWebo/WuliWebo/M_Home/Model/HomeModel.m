@@ -28,7 +28,7 @@
         _time = dictionary[@"time"];
         
         _rowHeight = 0;
-        
+        _weiboID = [dictionary verifiedObjectForKey:@"weiboID"];
         //头像
         _rowHeight+=14;
         _rowHeight+=50;
